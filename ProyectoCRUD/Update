@@ -1,0 +1,17 @@
+<?php
+
+include("conexion.php");
+$con=conectar();
+
+$RFC=$_POST['RFC'];
+$Telefono=$_POST['Telefono'];
+$Nombre=$_POST['Nombres'];
+$Apellido=$_POST['Apellidos'];
+
+$sql="UPDATE empleados SET  Telefono='$Telefono',Nombre='$Nombre',Apellidos='$Apellidos' WHERE RFC='$RFC'";
+$query=mysqli_query($con,$sql);
+
+    if($query){
+        Header("Location: Empleado.php");
+    }
+?>

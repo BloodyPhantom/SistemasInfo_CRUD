@@ -1,0 +1,19 @@
+<?php
+include("conexion.php");
+$con=conectar();
+
+$RFC=$_POST['RFC'];
+$Telefono=$_POST['Telefono'];
+$Nombre=$_POST['Nombre'];
+$Apellidos=$_POST['Apellidos'];
+
+
+$sql="INSERT INTO empleados VALUES('$RFC','$Telefono','$Nombre','$Apellidos')";
+$query= mysqli_query($con,$sql);
+
+if($query){
+    Header("Location: Empleado.php");
+    
+}else {
+}
+?>
